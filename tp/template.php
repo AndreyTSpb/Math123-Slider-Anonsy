@@ -18,6 +18,8 @@ extract($data);
                     <div class="card-base-anonce-body">
                         <?=(!empty($post['img']))?$post['img']:'<img src="https://via.placeholder.com/300x220">'?>
                         <p><?=(!empty($post['desc']))?$post['desc']:'Net opisania';?></p>
+                    </div>
+                    <div class="button">
                         <a href="<?=(!empty($post['url']))?$post['url']:'#';?>" class="btn-sub green">Подробней</a>
                     </div>
                 </div>
