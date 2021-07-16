@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function(){
     jQuery(function($) {
         let id_slider = Obj.id_slider;
         //Слайдер для анонсов на второстепенных страницах
-        $('#page-anonse-'+id_slider).slick({
+        $('.page-anonse').slick({
             infinite: true,
             slidesToShow: 2,
             slidesToScroll: 2,
