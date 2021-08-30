@@ -7,7 +7,7 @@
  */
 extract($data);
 ?>
-<h2 class="text-white"><?=(!empty($title))?$title:'анонсы мероприятий';?></h2>
+<h2><?=(!empty($title))?$title:'анонсы мероприятий';?></h2>
 <div class="<?=(!empty($subject))?$subject:'phyth';?>-anons-wrap page-anonse" id="page-anonse-<?=$id_slider;?>">
     <?php if(!empty($posts)):?>
 
@@ -20,7 +20,29 @@ extract($data);
                         <p><?=(!empty($post['desc']))?$post['desc']:'Net opisania';?></p>
                     </div>
                     <div class="button">
-                        <a href="<?=(!empty($post['url']))?$post['url']:'#';?>" class="btn-sub green">Подробней</a>
+                        <?php
+                        /**
+                         * Цвет кнопки
+                         */
+                        switch ($subject){
+                            case 'math':
+                                $btn_color = 'purple';
+                                break;
+                            case 'phyth':
+                                $btn_color = 'green';
+                                break;
+                            case 'prog':
+                                $btn_color = 'orang';
+                                break;
+                            case 'biznes':
+                                $btn_color = 'blue';
+                                break;
+                            default:
+                                $btn_color = 'green';
+                                break;
+                        }
+                        ?>
+                        <a href="<?=(!empty($post['url']))?$post['url']:'#';?>" class="btn-sub <?=$btn_color?>">Подробнее</a>
                     </div>
                 </div>
             </div>
